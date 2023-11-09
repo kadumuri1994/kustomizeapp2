@@ -4,5 +4,3 @@ kind: ConfigMap
 metadata:
   name: the-map
   namespace: kaddu
-data:
-  key3: value3  # Additional data for the destination app
