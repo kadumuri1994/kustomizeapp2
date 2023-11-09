@@ -1,5 +1,5 @@
 commonLabels:
-  app: demo-2
+  app: demo
 
 resources:
 - deployment.yaml
