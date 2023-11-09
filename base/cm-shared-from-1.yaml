@@ -1,15 +1,8 @@
+# configmap-patch.yaml
 apiVersion: v1
-kind: ArgoCDConfig
+kind: ConfigMap
 metadata:
-  name: shared-argocd-config
-spec:
-  configManagementPlugins:
-  - name: sharedplugin
-    init:
-      command: [sh, -c]
-      args: ['kubectl get configmaps -n kaddu the-map -o json']
-    generate:
-      command: [sh, -c]
-      args: ['kubectl get configmaps -n kaddu the-map -o json']
-
-
+  name: the-map
+  namespace: kustomizeapp1
+data:
+  key3: value3  # Additional data for the destination app
