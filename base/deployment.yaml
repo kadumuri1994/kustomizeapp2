@@ -14,6 +14,12 @@ spec:
       containers:
       - name: the-container
         image: docker.io/kostiscodefresh/gitops-kustomize-app:v1.0
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          echo "Environment Variables:"
+          echo "MY_MYSQL_DB: $MY_MYSQL_DB"
+          echo "SHARED_CM: $SHARED_CM"
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
