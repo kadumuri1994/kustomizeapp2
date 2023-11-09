@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCDConfig
+metadata:
+  name: shared-argocd-config
+spec:
+  configManagementPlugins:
+  - name: sharedplugin
+    init:
+      command: [sh, -c]
+      args: ['kubectl get configmaps -n kaddu the-map -o json']
+    generate:
+      command: [sh, -c]
+      args: ['kubectl get configmaps -n kaddu the-map -o json']
+
+
