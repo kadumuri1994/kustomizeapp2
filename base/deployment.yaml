@@ -23,3 +23,8 @@ spec:
             configMapKeyRef:
               name: the-map-2
               key: mysqlDB
+        - name: SHARED_CM
+          valueFrom:
+            configMapKeyRef:
+              name: the-map
+              key: mysqlDB
