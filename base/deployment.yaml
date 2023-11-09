@@ -20,7 +20,8 @@ spec:
         - |
           echo "Environment Variables:"
           echo "MY_MYSQL_DB: $MY_MYSQL_DB"
-          echo "SHARED_CM: $SHARED_CM"
+          echo "SHARED_CM_1: $SHARED_CM_1"
+          echo "SHARED_CM_2: $SHARED_CM_2"
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
@@ -30,8 +31,13 @@ spec:
             configMapKeyRef:
               name: the-map-2
               key: mysqlDB
-        - name: SHARED_CM
+        - name: SHARED_CM_1
           valueFrom:
             configMapKeyRef:
               name: the-map
               key: mysqlDB
+        - name: SHARED_CM_2
+          valueFrom:
+            configMapKeyRef:
+              name: the-map
+              key: enableExecution
