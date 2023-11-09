@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: the-map-2
+data:
+  mysqlDB: "mysql2.example.com:3306"
+ 
