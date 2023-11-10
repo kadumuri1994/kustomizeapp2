@@ -1,6 +1,0 @@
-# configmap-patch.yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: the-map
-  namespace: kaddu
